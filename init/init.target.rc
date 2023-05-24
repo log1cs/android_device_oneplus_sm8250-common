@@ -75,6 +75,10 @@ on init
     chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
     start logd
 
+    # Runtime FS tuning
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
+
 on early-fs
     start vold
 
@@ -144,6 +148,10 @@ service vendor.lowi /vendor/bin/sscrpcd
    user system
    group system wakelock
    capabilities BLOCK_SUSPEND
+
+# Runtime fs tuning
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
