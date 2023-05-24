@@ -336,6 +336,9 @@ PRODUCT_PACKAGES += \
     SystemUIResTarget \
     WifiResTarget
 
+# Pixel Launcher
+INCLUDE_PIXEL_LAUNCHER := true
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
