@@ -363,8 +363,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
 # Sensors
+$(call inherit-product, vendor/hardware/oplus/hidl/sensors/sensors_product.mk)
+
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0-service.multihal \
     libsensorndkbridge \
     sensors.oplus
 
