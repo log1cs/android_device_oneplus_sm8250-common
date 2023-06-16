@@ -1,0 +1,2 @@
+allow hal_camera_default proc:file { write };
+allow hal_camera_default default_prop:file { read };
